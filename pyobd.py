@@ -243,7 +243,7 @@ class MyApp(wx.App):
         def sensor_toggle(e):
             sel = e.m_itemIndex
             state = self.senprod.active[sel]
-            print sel, state
+            print(sel, state)
             if   state == 0:
                 self.senprod.on(sel)
                 self.sensors.SetStringItem(sel,1,"1")
@@ -347,10 +347,7 @@ class MyApp(wx.App):
 
         #read settings from file
         self.config = ConfigParser.RawConfigParser()
-                
-        #print platform.system()
-        #print platform.mac_ver()[]        
-        
+
         if "OS" in os.environ.keys(): #runnig under windows
           self.configfilepath="pyobd.ini"
         else:
